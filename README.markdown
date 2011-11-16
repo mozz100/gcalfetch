@@ -50,4 +50,4 @@ An example of how you might use it (cross-domain JSONP) from JQuery:
 
 Example at jsfiddle:
 
-http://jsfiddle.net/FyWP4/
+http://jsfiddle.net/N6BPA/
