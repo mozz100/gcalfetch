@@ -16,6 +16,16 @@ Use it, together with some simple parsing of the titles it returns (that bit's u
 
 Intended to be used by other systems where you don't want the complexity of parsing xml.
 
+Install
+-------
+
+    $ gem install bundler
+    $ bundle install
+    $ rackup -p 9292 config.ru
+
+Usage
+-----
+
 You'll need either:
 
 * the Private XML URL that Google calendar gives you.  Click your calendar settings
