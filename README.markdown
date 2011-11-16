@@ -26,11 +26,15 @@ If you're running it locally, this will retrieve current events, if there are an
 
 http://localhost:9292/?cal=https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F9fjf6vkf1ou50j2umnju2lnrss%2540group.calendar.google.com%2Fpublic%2Fbasic
 
+I set it up on heroku for my own use, feel free to share in the heroku magic:
+
+http://gcalfetch.heroku.com/?cal=https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F9fjf6vkf1ou50j2umnju2lnrss%2540group.calendar.google.com%2Fpublic%2Fbasic
+
 An example of how you might use it (cross-domain JSONP) from JQuery:
 
     $(document).ready(function() {
         $.ajax({
-            url: 'http://localhost:9292',  // or wherever you're running this Rack app
+            url: 'http://gcalfetch.heroku.com',  // or wherever you're running this Rack app
             data: {
               // pass the xml feed you get from google calendar
               "cal" : "https://www.google.com/calendar/feeds/9fjf6vkf1ou50j2umnju2lnrss%40group.calendar.google.com/public/basic"
@@ -43,3 +47,7 @@ An example of how you might use it (cross-domain JSONP) from JQuery:
             type: 'GET',
         });
     });
+
+Example at jsfiddle:
+
+http://jsfiddle.net/FyWP4/
