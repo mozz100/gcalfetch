@@ -19,6 +19,14 @@ Intended to be used by other systems where you don't want the complexity of pars
 Install
 -------
 
+First - do you need to install it?  If you want to use it, I set it up on heroku, feel free to share in the heroku magic:
+
+http://gcalfetch.heroku.com/?cal=https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F9fjf6vkf1ou50j2umnju2lnrss%2540group.calendar.google.com%2Fpublic%2Fbasic
+
+Just change the cal parameter to your own private calendar URL, remember to use the XML link and to URL encode it.
+
+If you want to run for yourself, clone this repository, then, assuming you have Ruby 1.9.2:
+
     $ gem install bundler
     $ bundle install
     $ rackup -p 9292 config.ru
@@ -39,9 +47,6 @@ If you're running it locally, this will retrieve current events, if there are an
 
 http://localhost:9292/?cal=https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F9fjf6vkf1ou50j2umnju2lnrss%2540group.calendar.google.com%2Fpublic%2Fbasic
 
-I set it up on heroku for my own use, feel free to share in the heroku magic:
-
-http://gcalfetch.heroku.com/?cal=https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F9fjf6vkf1ou50j2umnju2lnrss%2540group.calendar.google.com%2Fpublic%2Fbasic
 
 An example of how you might use it (cross-domain JSONP) from JQuery:
 
