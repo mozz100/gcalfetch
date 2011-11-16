@@ -3,6 +3,9 @@ Google Calendar fetch
 
 Given a Google Calendar XML url, this Rack app simply returns an array of the current events as JSON.
 
+Sounds simple?  Try handling the complexities of repeating events with exceptions, timezones, and so on.  Much easier to let Google do it
+for you, and you get a nice interface, plus sync with your mobile devices, and so on...
+
 Use it, together with some simple parsing of the titles it returns (that bit's up to you) to:
 
 * find out what's in your calendar now
