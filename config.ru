@@ -1,4 +1,6 @@
-# by Richard Morrison http://www.rmorrison.net
+# Copyright 2011 by Richard Morrison http://www.rmorrison.net
+# licensed under a Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License.
+# http://creativecommons.org/licenses/by-sa/2.0/uk/
 
 require 'nokogiri'
 require 'net/http'
