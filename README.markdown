@@ -3,12 +3,13 @@ Google Calendar fetch
 
 Given a Google Calendar XML url, this Rack app simply returns an array of the current events as JSON.
 
-Sounds simple?  Try handling the complexities of repeating events with exceptions, timezones, and so on.  Much easier to let Google do it
-for you, and you get a nice interface, plus sync with your mobile devices, and so on...
+Let Google Calendar handle the complexities of repeating events with exceptions, timezones, and so on.
+They're free, unlimited, you get a nice interface, plus sync with your mobile devices, and so on...
 
-Use it, together with some simple parsing of the titles it returns (that bit's up to you) to:
+Use Google Calendar Fetch, together with some simple parsing of the titles it returns (that bit's up to you) to:
 
-* find out what's in your calendar now
+* find out what's in your calendar now (digital signage possibilities...)
+* direct phone calls to a scheduled list of numbers (perhaps cover your office phone with a rota over the holidays)
 * schedule variables for your webapp that change on a schedule (you'd have to poll every so often)
 * control your burglar alarm (set an appointment 'on' from 9am to 5pm every day)
 * feed your pets by robot arm (at your own risk)
@@ -74,3 +75,9 @@ Licence
 -------
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/uk/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Richard Morrison</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/">Creative Commons Attribution-ShareAlike 2.0 UK: England &amp; Wales License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/mozz100/gcalfetch" rel="dct:source">github.com</a>.
+
+More ideas
+----------
+
+An extra parameter could be attached so that you were able to retrieve all items overlapping a particular moment in time.
+(For now, you just get current appointments i.e. right now)
