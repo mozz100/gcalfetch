@@ -1,10 +1,11 @@
 Google Calendar fetch
 =====================
 
-Given a Google Calendar XML url, this Rack app simply returns an array of the current events as JSON.
+Given a Google Calendar XML url, this Rack app simply returns an array of the current events as JSON.  Comes in 
+handy if you're writing a cron job, a command line app, or a home automation system.
 
 Let Google Calendar handle the complexities of repeating events with exceptions, timezones, and so on.
-They're free, unlimited, you get a nice interface, plus sync with your mobile devices, and so on...
+They're free, unlimited, you get a nice interface, plus sync with your mobile devices...
 
 Use Google Calendar Fetch, together with some simple parsing of the titles it returns (that bit's up to you) to:
 
