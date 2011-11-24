@@ -72,6 +72,13 @@ Example at jsfiddle:
 
 http://jsfiddle.net/N6BPA/
 
+Parameters you might like to use on the querystring:
+
+* *cal* - required, the XML URL of the Google calendar
+* *callback* - if format is JSON (the default), wrap result in a callback function (JSONP)
+* *max_results* - optional
+* *format* - optional, use either 'txt' or 'json' (default)
+
 Licence
 -------
 

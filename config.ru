@@ -10,10 +10,12 @@ require 'json'
 run lambda { |env|
   response_code = 500  # assume the worst...
   begin
-    # parse out the calendar url and callback params
+    # parse out the calendar url, callback, max_results and format params
     params = Rack::Request.new(env).params
     calendar_url = params['cal']
     callback = params['callback']
+    max_results = params['max_results'] ? params['max_results'].to_i : nil
+    format = params['format'] || 'json'
 
     # catch gotcha
     raise 'Supply a url-encoded private xml address for a Google calendar as the cal parameter on the querystring' unless calendar_url
@@ -41,16 +43,26 @@ run lambda { |env|
     doc = Nokogiri::XML(s)
     titles = doc.css('feed entry title').map(&:text) # returns an array of titles
 
-    data = {'results'=>titles}
+    if max_results and max_results > 0
+      data = {'results'=>titles[0..max_results-1]}
+    else
+      data = {'results'=>titles}
+    end
+
     response_code = 200
   rescue
     # catch error and output it
-    data = {'error' => $!.to_s}
+    data = {'error'=> $!.to_s, 'results' => []}
   end
 
   # write stuff back to the requester, wrapped in JSONP callback if necessary
-  response_body = data.to_json
-  response_body = callback + "(#{response_body});" if callback
+  if format == 'json'
+    response_body = data.to_json
+    response_body = callback + "(#{response_body});" if callback
+  elsif format == 'txt'
+    response_body = data['results'].join(", ")
+    response_body = "(no results)" if response_body == ""
+  end
 
   return [
     response_code, 
