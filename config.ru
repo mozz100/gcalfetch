@@ -60,7 +60,7 @@ run lambda { |env|
     response_body = data.to_json
     response_body = callback + "(#{response_body});" if callback
   elsif format == 'txt'
-    response_body = data['results'].join(", ")
+    response_body = data['results'].join("\n")
     response_body = "(no results)" if response_body == ""
   end
 
